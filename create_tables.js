@@ -1,12 +1,8 @@
-const debug = require('debug')('monprojetdemo:create_database');
-const mysql = require('mysql2');
 
-// create the connection to database
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'studentdb'
-});
+const debug = require('debug')('monprojetdemo:create_database');
+const connection = require('./db_connect').connection;
+
+
 connection.query(
     'create table students (id int auto_increment primary key, firstName varchar(100), lastName varchar(100))',
     function(err, results, fields) {
@@ -15,3 +11,4 @@ connection.query(
       connection.close();
     }
 );
+

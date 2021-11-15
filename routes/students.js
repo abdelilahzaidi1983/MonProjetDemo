@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
       if (err) {
         debug(err);
       } else {
-        res.json(results);
+        res.render('students',{studentList:results});
       }
     }
   );
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
       if (err) {
         debug(err);
       } else {
-        res.status(201).send("Student created");
+        res.status(201).render('students',{studentList:results});
       }
     }
   );
@@ -62,5 +62,7 @@ router.get('/:id', (req, res) => {
     }
   );
 });
+
+
 
 module.exports = router;

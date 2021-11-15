@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gesttion d'etudiants</h1>
+    <div class="createStudent">
+        
+            <p>Inscription :</p>
+           
+                
+                <hr>
+                <form action="" method="post">
+                    <label for="lastName"><b>Nom</b></label>
+                <input type="text" placeholder="Enter last Name" name="lastName id="lastName" required>
+
+                <label for="first"><b>Prénom</b></label>
+                <input type="text" placeholder="Enter first name" name="firstName" id="firstName" required>
+
+
+                <button type="submit" class="createStudentButton" >Créer</button>
+
+
+                </form>
+                
+
+            
+
+
+    </div>
+    <div class="listStudent">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < studentList.length; i++ ) { %>
+                <tr>
+                    <td><%= studentList[i].lastName %></td>
+                    <td><%= studentList[i].firstname %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        
+        
+    </div>
+    
+</body>
+</html>
